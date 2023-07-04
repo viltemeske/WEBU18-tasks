@@ -1,9 +1,11 @@
 let toggle_btn;
 let main_wraper;
+let hamburger;
 
 function declare() {
     toggle_btn =  document.querySelector(".toggle-btn");
     main_wraper = document.querySelector(".main-wraper");
+    hamburger = document.querySelector(".hamburger");
 }
 
 const main =  document.querySelector("main");
@@ -38,6 +40,9 @@ function toggleAnimation() {
 
 function events() {
 toggle_btn.addEventListener("click", toggleAnimation);
+hamburger.addEventListener("click", () => {
+    main_wraper.classList.toggle("active");
+})
 }
 
 events();
