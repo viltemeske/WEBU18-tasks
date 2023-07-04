@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-:root {
+.light {
   --mainColor: #64bcf4;
   --hoverColor: #5bacdf;
   --backgroundColor: #f1f8fc;
@@ -8,6 +8,16 @@
   --darkSecondary: #45424b;
   --lightPrimary: #919191;
   --lightSecondary: #aaa;
+  --shadowColor: rgba(0, 0, 0, 0.05);
+}
+.dark {
+  --mainColor: #64bcf4;
+  --hoverColor: #5bacdf;
+  --backgroundColor: #192e3a;
+  --darkPrimary: #f3f3f3;
+  --darkSecondary: #fff;
+  --lightPrimary: #ccc;
+  --lightSecondary: #e7e3e3;
   --shadowColor: rgba(0, 0, 0, 0.05);
 
 }
@@ -31,8 +41,13 @@ a {
 img {
   width: 100%;
 }
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}
 
 .main-wraper {
+  position: relative;
   padding: 1.7rem 0 2rem;
   width: 100%;
   min-height: 100vh;
@@ -151,11 +166,41 @@ header .container {
   line-height: 39px;
 }
 
-.toggle-btn i:last-child{
+.main-wraper.light .toggle-btn i:last-child{
   display: none;
-
+}
+.main-wraper.light .toggle-btn i:first-child{
+  display: block;
+}
+.main-wraper.dark .toggle-btn i:last-child{
+  display: block;
+}
+.main-wraper.dark .toggle-btn i:first-child{
+  display: none;
 }
 .toggle-btn:hover {
   background-color: var(--mainColor);
 }
-
+.shape {
+  position: absolute;
+  z-index: 0;
+  width: 500px;
+  bottom: -180px;
+  left: -15px;
+  opacity: 0.1;
+}
+.copy{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  animation: appear 1s 1 both;
+}
+@keyframes appear{
+  0% {
+    clip-path: circle(30% at -25% -25%);
+  }
+  100% {
+    clip-path: circle(150% at 0 0);
+  }
+}
