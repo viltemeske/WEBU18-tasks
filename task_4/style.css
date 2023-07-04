@@ -8,6 +8,7 @@
   --darkSecondary: #45424b;
   --lightPrimary: #919191;
   --lightSecondary: #aaa;
+  --shadowColor: rgba(0, 0, 0, 0.05);
 
 }
 
@@ -37,7 +38,9 @@ img {
   min-height: 100vh;
   overflow: hidden;
   background-color: var(--backgroundColor);
-  
+  display: flex;
+  flex-direction: column;
+   
 }
 
 .logo img {
@@ -104,3 +107,55 @@ header .container {
   background-color: var(--hoverColor);
   transform: scale(1) !important;
 }
+.showcase-area .container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-content: center;
+}
+.main-title {
+  font-size: 1.4rem;
+  color: var(--darkPrimary);
+  text-transform: capitalize;
+  line-height: 1.4;
+}
+.paragraph {
+  color: var(--lightPrimary);
+  font-size: 1.1rem;
+  margin: 1.9rem 0 2.5rem;
+  max-width: 600px;
+  line-height: 2.3;
+}
+
+.showcase-area .btn {
+  box-shadow: 0 0 40px 2px var(--shadowColor);
+}
+.person {
+  width: 123%;
+  transform: translate(15%, 25px);
+}
+.toggle-btn{
+  display: inline-block;
+  border: none;
+  background-color: var(--darkSecondary);
+  color: var(--backgroundColor);
+  outline: none;
+  cursor: pointer;
+  width: 39px;
+  height: 39px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  transition: 0.3s;
+}
+.toggle-btn i{
+  line-height: 39px;
+}
+
+.toggle-btn i:last-child{
+  display: none;
+
+}
+.toggle-btn:hover {
+  background-color: var(--mainColor);
+}
+
