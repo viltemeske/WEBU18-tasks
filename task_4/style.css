@@ -323,8 +323,13 @@ header .container {
 
   .links .btn {
     background: none;
+    }
+    
+  .links .btn:hover {
+  color: var(--hoverColor) !important;
+  transform: scale(1.05) !important;
   }
-
+  
   .overlay {
     display: block;
     position: fixed;
